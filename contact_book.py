@@ -6,16 +6,15 @@ while True:
     print("3. Search Contact")
     print("4. Delete Contact")
     print("5. Exit")
-
     choice = input("Enter your choice: ")
+    
     if choice == "1":
         print("1.Adding number......")
-
         name = input("Enter your name: ")
         num = input("Enter your number: ")
         contact = {"name": name, "number": num}
+        contacts.append(contact)
         print("Contact saved Successfully...")
-        
     elif choice == "2":
         print("2.Viewing contact.......")
     elif choice == "3":
