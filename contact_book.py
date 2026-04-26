@@ -20,7 +20,14 @@ while True:
             for contact in contacts:
                 print("Name:", contact["name"], "| Number:", contact["number"])
     elif choice == "3":
-        print("3. Searching contact.......")
+        search = input("Enter name to search: ")
+        found = False
+        for contact in contacts:
+            if contact["name"] == search:
+                print("Name:", contact["name"], "| Number:", contact["number"])
+                found = True
+        if found == False:
+            print("Contact not found!")
     elif choice == "4":
         print("4. Deleting number.......")
     elif choice == "5":
