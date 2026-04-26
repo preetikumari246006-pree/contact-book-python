@@ -1,4 +1,21 @@
-contacts = []
+import json
+
+def load_contacts():
+    try:
+        file = open("contacts.json", "r")
+        contacts = json.load(file)
+        file.close()
+        return contacts
+    except:
+        return []
+
+def save_contacts():
+    file = open("contacts.json", "w")
+    json.dump(contacts, file)
+    file.close()
+
+
+contacts = load_contacts()
 while True:
     print("===== Contact Book =====")
     print("1. Add Contact")
@@ -12,7 +29,8 @@ while True:
         num = input("Enter your number: ")
         contact = {"name": name, "number": num}
         contacts.append(contact)
-        print("Contact saved Successfully...")
+        print("Contact saved Successfully..")
+        save_contacts()
     elif choice == "2":
         if len(contacts) == 0:
                 print("No contacts found!")
@@ -35,6 +53,7 @@ while True:
             if contact["name"] == name:
                 contacts.remove(contact)
                 print("Contact deleted successfully!")
+                save_contacts()
                 found = True
         if found == False:
             print("Contact not found!")
