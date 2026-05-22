@@ -29,4 +29,4 @@ python contact_book.py
 
 ## 👩‍💻 Author
 **Preeti Kumari**  
-🚀 Aspiring Python Developer | Building real-world projects daily
+🚀 Python Developer | Building real-world projects daily
